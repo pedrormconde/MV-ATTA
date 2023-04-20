@@ -1,0 +1,1 @@
+In this folder are saved the final prediction outputs of the model on the test set.

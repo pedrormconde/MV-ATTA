@@ -1,0 +1,1 @@
+In this folder are saved the parameters of the trained model as checkpoint.
