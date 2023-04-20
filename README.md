@@ -17,4 +17,4 @@ The inputs for training and testing to be used with our models must be located i
 
 - 'p0.npy', a numpy array of shape $(N,k)$ where $N$ equals number of samples in the set and $k$ the number of classes in the problem. For each sample, the array 'p0.npy' represents the vector $\mathbf{p}_0$ introduced in the article.
 
-- 'lables.npy', a numpy array of shape $(N,)$ where $N$ equals number of samples in the set. Each sample in the array 'lables.npy' is the true class of the respective sample in the previous arrays.
+- 'labels.npy', a numpy array of shape $(N,)$ where $N$ equals number of samples in the set. Each sample in the array 'labels.npy' is the true class of the respective sample in the previous arrays.
