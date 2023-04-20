@@ -11,6 +11,7 @@ This page presents the code for the uncertainty calibration methods M-ATTA and V
 
 We refer to Secion 4 of the referred paper, before using the code here presented. 
 
-The inputs for training and testing to be used with our models must be located in the directories 'data/train' and 'data/test', respectively. The inputs must be of the form
-
-'Z.npy', a numpy array of shape $(N,m,k)$ where $N$ equals number of samples in the set, $m$ equal the number of different augmentations used, and $k$ the number of classes in the problem. For each sample, the array 'Z.npy' reprents the transpose of the matrix $\mathbb{Z}$ presented in the article.
+The inputs for training and testing to be used with our models must be located in the directories 'data/train' and 'data/test', respectively. The inputs must be of the form:
+´´´
+'Z.npy', a numpy array of shape $(N,m,k)$ where $N$ equals number of samples in the set, $m$ equal the number of different augmentations used, and $k$ the number of classes in the problem. For each sample, the array 'Z.npy' reprents the transpose of the matrix $\mathbf{Z}$ presented in the article.
+´´´
