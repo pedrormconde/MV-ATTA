@@ -9,7 +9,7 @@ This page presents the code for the uncertainty calibration methods M-ATTA and V
 
 ## Instructions
 
-We refer to Secion 4 of the referred paper, before using the code here presented. 
+We refer to Secion 4 of the referred paper, before using the code here presented, in order for the user to understand how to construct th inputs for our models. 
 
 The inputs for training and testing to be used with our models must be located in the directories 'data/train' and 'data/test', respectively. The inputs must be of the form:
 
