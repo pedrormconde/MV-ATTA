@@ -13,8 +13,8 @@ We refer to Secion 4 of the referred paper, before using the code here presented
 
 The inputs for training and testing to be used with our models must be located in the directories 'data/train' and 'data/test', respectively. The inputs must be of the form:
 
-- 'Z.npy', a numpy array of shape $(N,m,k)$ where $N$ equals number of samples in the set, $m$ equal the number of different augmentations used, and $k$ the number of classes in the problem. For each sample, the array 'Z.npy' represents the transpose of the matrix $\mathbf{Z}$ introduced in the article.
+- 'Z.npy', a numpy array of shape $(N,m,k)$ where $N$ equals number of samples in the set, $m$ equal the number of different augmentations used, and $k$ the number of classes in the problem. For each sample, the array 'Z.npy' represents the transpose of the matrix $\mathbf{Z} \in \mathbb{R}^{k,m}$ introduced in the article.
 
-- 'p0.npy', a numpy array of shape $(N,k)$ where $N$ equals number of samples in the set and $k$ the number of classes in the problem. For each sample, the array 'p0.npy' represents the vector $\mathbf{p}_0$ introduced in the article.
+- 'p0.npy', a numpy array of shape $(N,k)$ where $N$ equals number of samples in the set and $k$ the number of classes in the problem. For each sample, the array 'p0.npy' represents the vector $\mathbf{p}_0 \in \mathbb{R}^{k}$ introduced in the article.
 
 - 'labels.npy', a numpy array of shape $(N,)$ where $N$ equals number of samples in the set. Each sample in the array 'labels.npy' is the true class of the respective sample in the previous arrays.
