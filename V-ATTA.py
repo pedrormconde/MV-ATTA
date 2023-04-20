@@ -8,6 +8,15 @@ from model.netcalib import M_ATTA, V_ATTA
 from calibration import Calibration, to_format_dict
 
 
+data_dir = 'data'
+
+
+P = np.load(os.path.join(data_dir,'train','Z.npy'))
+
+n_classes = P.shape[2]
+n_augms = P.shape[1]
+
+
 def load_data(root,dataset):
     p0_file = os.path.join(root,dataset,'p0.npy')
     assert os.path.isfile(p0_file)
@@ -32,33 +41,42 @@ def load_data(root,dataset):
     return {'p0':p0_data,'labels':pgt_data,'p':p_data}
 
 
+def TRAIN(epochs, learning_rate, batch_size):
+   
+    
+    training_set = load_data(data_dir,'train')
+
+
+    # Define calibration model
+    model = M_ATTA(n_classes,n_augms)
+    calib = Calibration(model)
+    
+    calib.Train( training_set, training_set, loss = 'nll_loss', epochs = epochs, lr = learning_rate, batch_size = batch_size, test_priod = epochs, plot=False)
+       
+    
+
+def TEST(checkpoint_file):
+
+
+    test_set     = load_data(data_dir,'test')
+
+
+    # Define calibration model
+    model = M_ATTA(n_classes,n_augms)
+    
+       
+    calib = Calibration(model, checkpoints=checkpoint_file)
+    
+    
+    test_set  = to_format_dict(test_set)
+    prediction,_ = calib._test_epoch(0,test_set)
+    np.save(os.path.join('prediction','P'), prediction)
 
 
 
 if __name__=='__main__':
     
-    data_dir = 'data'
+    TRAIN(epochs=5, learning_rate=0.001, batch_size=500)
     
-
-    P = np.load(os.path.join(data_dir,'train','Z.npy'))
-
-    n_classes = P.shape[2]
-    n_augms = P.shape[1]
-    
-
-    training_set = load_data(data_dir,'train')
-    test_set     = load_data(data_dir,'test')
-
-
-    # Define calibration model
-    model = V_ATTA(n_classes,n_augms)
-    calib = Calibration(model)
-    
-    calib.Train( training_set, training_set, loss = 'nll_loss', epochs = 5, lr = 0.001, batch_size = 500, test_priod = 5, plot=False)
-       
-    calib = Calibration(model, checkpoints='checkpoint')
-    
-    test_set  = to_format_dict(test_set)
-    prediction,_ = calib._test_epoch(0,test_set)
-    np.save(os.path.join('prediction','P'), prediction)
+    TEST(checkpoint_file='checkpoint.pth')
         
