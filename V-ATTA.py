@@ -76,7 +76,7 @@ def TEST(checkpoint_file):
 
 if __name__=='__main__':
     
-    TRAIN(epochs=5, learning_rate=0.001, batch_size=500)
+    TRAIN(epochs=500, learning_rate=0.001, batch_size=500)
     
     TEST(checkpoint_file='checkpoint.pth')
         
