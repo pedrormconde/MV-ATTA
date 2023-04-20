@@ -15,3 +15,4 @@ The inputs for training and testing to be used with our models must be located i
 
 - 'Z.npy', a numpy array of shape $(N,m,k)$ where $N$ equals number of samples in the set, $m$ equal the number of different augmentations used, and $k$ the number of classes in the problem. For each sample, the array 'Z.npy' reprents the transpose of the matrix $\mathbf{Z}$ presented in the article.
 
+- 'p0.npy', a numpy array of shape $(N,k)$ where $N$ equals number of samples in the set and $k$ the number of classes in the problem. For each sample, the array 'p0.npy' reprents the vector $\mathbf{p}_0$ presented in the article.
