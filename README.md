@@ -1,6 +1,5 @@
 # M/V-ATTA
 
-(Under construction)
 
 ## Introduction
 
