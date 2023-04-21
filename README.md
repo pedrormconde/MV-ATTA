@@ -18,3 +18,13 @@ The inputs for training and testing to be used with our models must be located i
 - 'p0.npy', a numpy array of shape $(N,k)$ where $N$ equals number of samples in the set and $k$ the number of classes in the problem. For each sample, the array 'p0.npy' represents the vector $\mathbf{p}_0 \in \mathbb{R}^{k}$ introduced in the article.
 
 - 'labels.npy', a numpy array of shape $(N,)$ where $N$ equals number of samples in the set. Each sample in the array 'labels.npy' is the true class of the respective sample in the previous arrays.
+
+To train and test both M-ATTA and V-ATTA we refer to the files 'M-ATTA.py' and 'V-ATTA.py', respectively. In both files we find
+
+```
+if __name__=='__main__':
+    
+    TRAIN(epochs=500, learning_rate=0.001, batch_size=500)
+    
+    TEST(checkpoint_file='checkpoint.pth')
+```
