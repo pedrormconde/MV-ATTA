@@ -28,3 +28,7 @@ if __name__=='__main__':
     
     TEST(checkpoint_file='checkpoint.pth')
 ```
+
+In the 'TRAIN' function you can edit the number of epochs, the learning rate and the batch size. This function will optimize the parameters of the model using the data present in 'data/train' and the Negative Log-Likelihood (NLL) as loss function. This function will print the results for that same set of data, with respect to the Brier score, the Expected Calibration Error (ECE), the multi-class Brier score and the NLL. Also, it will produce a file with the optimized parameters of the model in 'checkpoints/checkpoint.pth'.
+
+In the TEST function you can edit the name of the file from where you load the parameters of the model that will be tested. The file is expected to be in the directory 'checkpoints'. This function will print the results for the set of data present in 'data/test', with respect to the same metrics as before. Also, it will produce a file with the final prediction probability vector, for all samples, in the form of an array with shape $(N,k)$ (where $N$ in the number of samples in the test set, and $k$ the number of classes in the problem) saved as 'prediction/prediction.npy'.
